@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<title><%= title %></title>
+	<link rel="stylesheet" href="css/style.css">
+</head>	
+<body>
+	
+	<div class="content">
+
+		<h2 class="player"><%= title %></h2>
+
+		<ul class="box">
+
+			<li class="item hd">
+				<div class="col">英雄</div>
+				<div class="col">比赛类型</div>
+				<div class="col">位置</div>
+				<div class="col">胜负</div>
+				<div class="col">开始时间</div>
+				<div class="col">操作</div>
+			</li>
+
+			<% data.forEach(function(item){ %>
+				<li class="item">
+					<div class="col"><%= item.champion.display_name %></div>
+					<div class="col"><%= item.game_type.name_cn %></div>
+					<div class="col"><%= item.champion.positions[0].position_in_cn %></div>
+					<div class="col"><%= item.battle_result ? '胜' : '负'  %></div>
+					<div class="col"><%= item.created %></div>
+					<div class="col"><a href="/gameInfo?game_id=<%= item.game_id%>">查看详情</a></div>
+				</li>
+			<% }) %>
+		</ul>
+
+	</div>
+	
+</body>
+</html>

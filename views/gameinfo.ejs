@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<title><%= title %></title>
+	<link rel="stylesheet" href="css/style.css">
+</head>	
+<body>
+	<div class="content">
+		<h2 class="player"><%= title %></h2>
+		<div class="time clearfix"><span>开始时间：<%= data.tiemStart %></span> <span class="pl20">结束时间：<%= data.timeEnd %></span></span></div>
+
+		<blockquote class="team">胜利队伍：</blockquote>
+		<ul class="box ">
+			<li class="item hd">
+				<div class="col">玩家</div>
+				<div class="col">英雄</div>
+				<div class="col">杀/死/助</div>
+				<div class="col">经济</div>
+				<div class="col">补刀</div>
+				<div class="col">最高连杀</div>
+			</li>
+			<% data.teamWin.forEach(function(item){ %>
+				<li class="item">
+					<div class="col"><img src="<%= item.player.url_img %>" alt=""><%= item.player.pn %></div>
+					<div class="col"><%= item.champion.title %></div>
+					<div class="col"><%= item.total_killed %>/<%= item.total_death %>/<%= item.total_assist %></div>
+					<div class="col"><%= item.total_gold_in_k %>k</div>
+					<div class="col"><%= item.minions_killed %></div>
+					<div class="col"><%= item.largest_multi_kill %></div>
+				</li>
+			<%})%>
+		</ul>
+
+		<blockquote class="team">失败队伍：</blockquote>
+
+		<ul class="box">
+			<li class="item hd">
+				<div class="col">玩家</div>
+				<div class="col">英雄</div>
+				<div class="col">杀/死/助</div>
+				<div class="col">经济</div>
+				<div class="col">补刀</div>
+				<div class="col">最高连杀</div>
+			</li>
+			<% data.teamLose.forEach(function(item){ %>
+					
+				<li class="item">
+					<div class="col"><img src="<%= item.player.url_img %>" alt=""><%= item.player.pn %></div>
+					<div class="col"><%= item.champion.title %></div>
+					<div class="col"><%= item.total_killed %>/<%= item.total_death %>/<%= item.total_assist %></div>
+					<div class="col"><%= item.total_gold_in_k %>k</div>
+					<div class="col"><%= item.minions_killed %></div>
+					<div class="col"><%= item.largest_multi_kill %></div>
+				</li>
+
+			<%})%>
+			
+		</ul>
+		
+	</div>
+	
+</body>
+</html>

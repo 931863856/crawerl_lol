@@ -1,0 +1,57 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+html,body{
+	font-family: microsoft yahei;
+	color: #333;
+	font-size: 14px;
+}
+.clearfix{
+	zoom: 1;
+}
+.clearfix:after{
+	content: '';
+	display: table;
+	clear: both;
+}
+.pl20{
+	padding-left: 20px;
+}
+.fr{
+	float: right;
+}
+.fl{
+	float: left;
+}
+.content{
+	padding: 10px 16px 50px;
+}
+.player{
+	text-align: center;
+	margin: 20px 0 30px;
+}
+.time{
+	text-align: center;
+	color: #999;
+	padding: 0 16px 16px;
+} 
+.team{
+	margin: 20px;
+	font-size: 18px;
+	text-align: center;
+}
+.box .item{
+	display: flex;
+}
+.box .item.hd .col{
+	background: #333;
+	color: #fff;
+}
+.box .item .col{
+	flex: 1;
+	background: #eee;
+	text-align: center;
+	padding: 10px 0; 
+	box-shadow: 1px 0 1px 1px #000;
+}
